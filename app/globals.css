@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #FFFFFF;
+    --foreground: #0F172A;
+  }
+
+  * {
+    @apply border-neutral-200;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Mobile-first: Prevent horizontal scroll */
+    overflow-x: hidden;
+  }
+
+  /* Mobile-first typography */
+  h1 {
+    @apply text-neutral-900;
+    font-size: 28px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    @apply text-neutral-900;
+    font-size: 22px;
+    line-height: 1.3;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    @apply text-neutral-900;
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.55;
+    @apply text-neutral-700;
+  }
+
+  /* Desktop typography scaling */
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+    }
+    h2 {
+      font-size: 36px;
+      line-height: 1.2;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 1.3;
+    }
+    p {
+      font-size: 17px;
+      line-height: 1.6;
+    }
+  }
+
+  /* Ensure minimum touch target size */
+  button, a {
+    min-height: 48px;
+    min-width: 48px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile-optimized animations (GPU-accelerated only) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile-safe animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
