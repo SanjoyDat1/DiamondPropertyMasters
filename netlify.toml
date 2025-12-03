@@ -26,3 +26,4 @@
   for = "/*.png"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+// Force rebuild Wed Dec  3 14:53:33 PST 2025
