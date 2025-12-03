@@ -6,12 +6,6 @@
   NODE_VERSION = "18"
   GIT_LFS_ENABLED = "true"
 
-# Handle client-side routing
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 # Cache static assets
 [[headers]]
   for = "/_next/static/*"
