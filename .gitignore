@@ -42,12 +42,3 @@ next-env.d.ts
 
 # Netlify
 .netlify/
-
-# Large video files (host these on a CDN like Cloudinary, S3, or Netlify Large Media)
-public/*.MOV
-public/*.mov
-public/*.mp4
-public/commercial.mp4
-public/ad*.MOV
-public/app_recording.MOV
-public/example.mov
